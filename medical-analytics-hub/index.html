@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Medical Analytics Hub</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div><h1>Medical Analytics Hub</h1><p>Hospital admissions, outcomes and costs for the last 12 months</p></div>
+  <div class="tabs" id="deptTabs" role="group" aria-label="Department"></div>
+</header>
+
+<section class="kpis" id="kpis"></section>
+
+<section class="grid">
+  <div class="card"><h2>Admissions per month</h2><div id="lineChart"></div></div>
+  <div class="card"><h2>Outcomes</h2><div id="outChart"></div></div>
+</section>
+<section class="grid">
+  <div class="card"><h2>Patients by age group</h2><div id="ageChart"></div></div>
+  <div class="card"><h2>Average stay by department (days)</h2><div id="losChart"></div></div>
+</section>
+
+<section class="card">
+  <h2>Patient records</h2>
+  <div class="tools">
+    <input id="q" type="search" placeholder="Search name, ID or diagnosis" aria-label="Search patients">
+    <select id="outFilter" aria-label="Outcome"><option value="">All outcomes</option><option>Recovered</option><option>Readmitted</option><option>Critical</option></select>
+  </div>
+  <div class="scroll"><table>
+    <thead><tr id="thead"></tr></thead><tbody id="tbody"></tbody>
+  </table></div>
+  <div class="pager"><span id="count"></span><span><button id="prev">Previous</button> <button id="next">Next</button></span></div>
+</section>
+<footer>Sample data is generated in your browser for demonstration. Replace the <code>makeData()</code> function with your own records or API.</footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
